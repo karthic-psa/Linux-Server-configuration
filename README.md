@@ -1,7 +1,6 @@
 # Linux Server Configuration:
 
-
-Took a baseline installation of a Linux server and prepared it to host my Item Catalog web applications. Secured the server from a number of attack vectors, installed and configured a database server, and deployed the Item Catalog web applications onto it.
+Installed and configured all required software to turn a baseline Ubuntu Amazon Web Services server into a fully functional web application server, including Apache Web Server and PostgreSQL database server. Secured the server from a number of attack vectors, installed and configured a database server, and deployed the Item Catalog web applications onto it.
 
 You can visit http://18.221.244.17/ for the website deployed.
 
