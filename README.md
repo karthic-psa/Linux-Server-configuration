@@ -61,6 +61,22 @@ This process will create two keys on your local machine, the file with extension
 
 __Note:__ Remember to add and save port 2200 with _Application __as__ Custom and Protocol __as__ TCP_ in the Networking section of your instance on Amazon Lightsail. 
 
+## Disable Password Based Login and Force Login using Key Pair 
+- On the server, logged in as the grader user, edit the sshd_config file <br> 
+`sudo nano /etc/ssh/sshd_config` 
+- Change the line with Password Authentication from yes to no
+- This is read only when the service starts, so to restart the ssh service <br> 
+`sudo service ssh restart`
+
+## Disable remote login of root user
+- On the server, logged in as root, edit the sshd_config file <br>
+`sudo nano /etc/ssh/sshd_config`
+- Change to `PermitRootLogin no`
+- Enable grader user remote ssh login
+`sudo nano /etc/ssh/sshd_config` and add `AllowUsers grader`
+- Restart the ssh service
+`sudo service ssh restart`
+
 ## Configure the Uncomplicated Firewall (UFW)
 
 Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
